@@ -32,23 +32,23 @@ defmodule Task4 do
   end
 
   # 2. Модульная реализация
+  def three_digit_numbers() do
+    100..999 |> Enum.to_list()
+  end
+
+  def generate_products(numbers) do
+    for x <- numbers, y <- numbers, do: x * y
+  end
+
+  def filter_palindromes(products) do
+    Enum.filter(products, &palindrome?/1)
+  end
+
   def largest_palindrome_modular() do
     three_digit_numbers()
     |> generate_products()
     |> filter_palindromes()
     |> Enum.max()
-  end
-
-  defp three_digit_numbers() do
-    100..999 |> Enum.to_list()
-  end
-
-  defp generate_products(numbers) do
-    for x <- numbers, y <- numbers, do: x * y
-  end
-
-  defp filter_palindromes(products) do
-    Enum.filter(products, &palindrome?/1)
   end
 
   # 3. Генерация последовательности при помощи отображения (map)
