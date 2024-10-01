@@ -1,25 +1,24 @@
 defmodule Task4Test do
   use ExUnit.Case
 
-  import Task4
+  import TailRecursion
+  import UsualRecursion
+  import Modular
+  import Lazy
 
-  test "palindrome number identification" do
-    assert palindrome?(9009) == true
-    assert palindrome?(12321) == true
-    assert palindrome?(12345) == false
-    assert palindrome?(1) == true
-    assert palindrome?(11) == true
-    assert palindrome?(10) == false
+  test "Tail Recursion" do
+    assert largest_palindrome_tail_recur() == 906609
   end
 
-  test "all implementations should return the same result" do
-    expected = 906609
+  test "Usual Recursion" do
+    assert largest_palindrome_usual_recur() == 906609
+  end
 
-    assert largest_palindrome_tail_recur() == expected
-    assert largest_palindrome_usual_recur() == expected
-    assert largest_palindrome_modular() == expected
-    assert largest_palindrome_map() == expected
-    assert largest_palindrome_reduce() == expected
-    assert largest_palindrome_lazy() == expected
+  test "Modular" do
+    assert largest_palindrome_modular() == 906609
+  end
+
+  test "Lazy" do
+    assert largest_palindrome_lazy() == 906609
   end
 end
