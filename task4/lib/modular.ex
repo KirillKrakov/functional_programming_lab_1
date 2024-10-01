@@ -2,7 +2,7 @@ defmodule Modular do
 
   # Модуль для проверки, является ли число палиндромом
   defmodule PalindromeChecker do
-    def palindrome?(n) do
+    def is_palindrome(n) do
       str_n = Integer.to_string(n)
       str_n == String.reverse(str_n)
     end
@@ -19,7 +19,7 @@ defmodule Modular do
   #Модуль для проверки на палиндром
   defmodule PalindromeFilter do
     def filter_palindromes(products) do
-      Enum.filter(products, &PalindromeChecker.palindrome?/1)
+      Enum.filter(products, &PalindromeChecker.is_palindrome/1)
     end
   end
   #Модуль для нахождения максимального значения
