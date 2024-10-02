@@ -4,6 +4,7 @@ defmodule Task4Test do
   doctest TailRecursion
   doctest UsualRecursion
   doctest Modular
+  doctest Map27
   doctest Lazy
 
   test "Tail Recursion" do
@@ -16,6 +17,10 @@ defmodule Task4Test do
 
   test "Modular" do
     assert Modular.quadratic_primes_modular() == %{count: 71, product: -59231, a: -61, b: 971}
+  end
+
+  test "Map27" do
+    assert Map27.quadratic_primes_map() == %{count: 71, product: -59231, a: -61, b: 971}
   end
 
   test "Lazy" do

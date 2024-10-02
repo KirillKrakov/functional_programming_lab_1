@@ -44,6 +44,7 @@ defmodule Modular do
   # Модуль для подсчёта результатов у каждой комбинации a и b
   defmodule ResultsGenerator do
     def generate_results(combinations) do
+      # аналог строки for {a, b} <- coefficients(), into: [] do %{product: a * b, a: a, b: b, count: PrimesCounter.count_primes(a, b)} end
       Enum.map(combinations, fn {a, b} ->
         %{product: a * b, a: a, b: b, count: PrimesCounter.count_primes(a, b)}
       end)
