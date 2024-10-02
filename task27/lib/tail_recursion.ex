@@ -1,7 +1,7 @@
 defmodule TailRecursion do
   # Проверка, является ли число простым
-  def is_prime(n) when n < 2, do: false
-  def is_prime(n) do
+  defp is_prime(n) when n < 2, do: false
+  defp is_prime(n) do
     is_prime_helper(n, 2)
   end
 
@@ -15,12 +15,12 @@ defmodule TailRecursion do
   end
 
   # Квадратичная функция
-  def quadratic(a, b, n) do
+  defp quadratic(a, b, n) do
     n * n + a * n + b
   end
 
   # Подсчет последовательных простых чисел
-  def count_primes(a, b) do
+  defp count_primes(a, b) do
     Stream.iterate(0, &(&1 + 1))
     |> Stream.map(&quadratic(a, b, &1))
     |> Stream.take_while(&is_prime/1)
