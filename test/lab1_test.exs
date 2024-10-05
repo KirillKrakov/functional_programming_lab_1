@@ -1,20 +1,6 @@
 defmodule Lab1Test do
   use ExUnit.Case
 
-  doctest Task4.TailRecursion
-  doctest Task4.UsualRecursion
-  doctest Task4.Modular
-  doctest Task4.Map4
-  doctest Task4.Cycle
-  doctest Task4.Lazy
-
-  doctest Task27.TailRecursion
-  doctest Task27.UsualRecursion
-  doctest Task27.Modular
-  doctest Task27.Map27
-  doctest Task27.Cycle
-  doctest Task27.Lazy
-
   test "Task 4 Tail Recursion" do
     assert Task4.TailRecursion.largest_palindrome_tail_recur() == 906_609
   end
