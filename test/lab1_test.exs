@@ -5,6 +5,7 @@ defmodule Lab1Test do
   doctest Task4.UsualRecursion
   doctest Task4.Modular
   doctest Task4.Map4
+  doctest Task4.Cycle
   doctest Task4.Lazy
 
   doctest Task27.TailRecursion
@@ -27,6 +28,10 @@ defmodule Lab1Test do
 
   test "Task 4 Map4" do
     assert Task4.Map4.largest_palindrome_map() == 906_609
+  end
+
+  test "Task 4 Cycle" do
+    assert Task4.Cycle.largest_palindrome_cycle() == 906_609
   end
 
   test "Task 4 Lazy" do
