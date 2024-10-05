@@ -1,4 +1,4 @@
-defmodule Modular do
+defmodule Task4.Modular do
   # Модуль для проверки, является ли число палиндромом
   defmodule PalindromeChecker do
     def is_palindrome(n) do

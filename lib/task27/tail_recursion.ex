@@ -1,4 +1,4 @@
-defmodule TailRecursion do
+defmodule Task27.TailRecursion do
   # Проверка, является ли число простым
   defp is_prime(n) when n < 2, do: false
 

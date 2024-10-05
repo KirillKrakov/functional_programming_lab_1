@@ -1,4 +1,4 @@
-defmodule Lazy do
+defmodule Task27.UsualRecursion do
   # Проверка, является ли число простым
   defp is_prime(n) when n < 2, do: false
 
@@ -29,16 +29,28 @@ defmodule Lazy do
     |> Enum.count()
   end
 
-  # 5. Ленивые коллекции (использование Stream)
-  def quadratic_primes_lazy() do
-    {a, b, count} =
-      Stream.flat_map(-999..999, fn a ->
-        Stream.map(-1000..1000, fn b ->
-          {a, b, count_primes(a, b)}
-        end)
-      end)
-      |> Enum.max_by(&elem(&1, 2))
+  # 1.2 Обычная рекурсия
+  def quadratic_primes_usual_recur() do
+    quadratic_primes_usual_recur(-999, -1000)
+  end
 
-    %{product: a * b, a: a, b: b, count: count}
+  defp quadratic_primes_usual_recur(a, b) do
+    cond do
+      a > 1000 ->
+        %{product: 0, a: 0, b: 0, count: 0}
+
+      b > 1001 ->
+        quadratic_primes_usual_recur(a + 1, -1000)
+
+      true ->
+        count = count_primes(a, b)
+        next_result = quadratic_primes_usual_recur(a, b + 1)
+
+        if count > next_result.count do
+          %{product: a * b, a: a, b: b, count: count}
+        else
+          next_result
+        end
+    end
   end
 end

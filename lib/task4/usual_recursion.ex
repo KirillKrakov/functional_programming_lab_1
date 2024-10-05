@@ -1,4 +1,4 @@
-defmodule UsualRecursion do
+defmodule Task4.UsualRecursion do
   # Проверка, является ли число палиндромом
   defp is_palindrome(n) do
     str_n = Integer.to_string(n)

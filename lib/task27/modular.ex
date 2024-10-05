@@ -1,4 +1,4 @@
-defmodule Modular do
+defmodule Task27.Modular do
   # Модуль для проверки, является ли число простым
   defmodule PrimeChecker do
     def is_prime(n) when n < 2, do: false

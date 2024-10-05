@@ -1,4 +1,4 @@
-defmodule Map4 do
+defmodule Task4.Map4 do
   # Проверка, является ли число палиндромом
   defp is_palindrome(n) do
     str_n = Integer.to_string(n)
