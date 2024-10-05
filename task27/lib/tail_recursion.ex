@@ -1,11 +1,13 @@
 defmodule TailRecursion do
   # Проверка, является ли число простым
   defp is_prime(n) when n < 2, do: false
+
   defp is_prime(n) do
     is_prime_helper(n, 2)
   end
 
   defp is_prime_helper(n, i) when i * i > n, do: true
+
   defp is_prime_helper(n, i) do
     if rem(n, i) == 0 do
       false
@@ -26,6 +28,7 @@ defmodule TailRecursion do
     |> Stream.take_while(&is_prime/1)
     |> Enum.count()
   end
+
   # 1.1 Хвостовая рекурсия
   def quadratic_primes_tail_recur() do
     quadratic_primes_tail_recur(-999, -1000, 0, {0, 0})
@@ -33,10 +36,20 @@ defmodule TailRecursion do
 
   defp quadratic_primes_tail_recur(a, b, max_count, max_coeffs) do
     cond do
-      a > 1000 -> %{product: elem(max_coeffs, 0) * elem(max_coeffs, 1), a: elem(max_coeffs, 0), b: elem(max_coeffs, 1), count: max_count}
-      b > 1001 -> quadratic_primes_tail_recur(a + 1, -1000, max_count, max_coeffs)
+      a > 1000 ->
+        %{
+          product: elem(max_coeffs, 0) * elem(max_coeffs, 1),
+          a: elem(max_coeffs, 0),
+          b: elem(max_coeffs, 1),
+          count: max_count
+        }
+
+      b > 1001 ->
+        quadratic_primes_tail_recur(a + 1, -1000, max_count, max_coeffs)
+
       true ->
         count = count_primes(a, b)
+
         if count > max_count do
           quadratic_primes_tail_recur(a, b + 1, count, {a, b})
         else
@@ -44,5 +57,4 @@ defmodule TailRecursion do
         end
     end
   end
-
 end

@@ -8,22 +8,22 @@ defmodule Task4Test do
   import Lazy
 
   test "Tail Recursion" do
-    assert largest_palindrome_tail_recur() == 906609
+    assert largest_palindrome_tail_recur() == 906_609
   end
 
   test "Usual Recursion" do
-    assert largest_palindrome_usual_recur() == 906609
+    assert largest_palindrome_usual_recur() == 906_609
   end
 
   test "Modular" do
-    assert largest_palindrome_modular() == 906609
+    assert largest_palindrome_modular() == 906_609
   end
 
   test "Map4" do
-    assert Map4.largest_palindrome_map() == 906609
+    assert Map4.largest_palindrome_map() == 906_609
   end
 
   test "Lazy" do
-    assert largest_palindrome_lazy() == 906609
+    assert largest_palindrome_lazy() == 906_609
   end
 end

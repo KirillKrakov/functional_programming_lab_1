@@ -1,13 +1,14 @@
 defmodule Modular do
-
   # Модуль для проверки, является ли число простым
   defmodule PrimeChecker do
     def is_prime(n) when n < 2, do: false
+
     def is_prime(n) do
       is_prime_helper(n, 2)
     end
 
     defp is_prime_helper(n, i) when i * i > n, do: true
+
     defp is_prime_helper(n, i) do
       if rem(n, i) == 0 do
         false

@@ -1,11 +1,13 @@
 defmodule Lazy do
   # Проверка, является ли число простым
   defp is_prime(n) when n < 2, do: false
+
   defp is_prime(n) do
     is_prime_helper(n, 2)
   end
 
   defp is_prime_helper(n, i) when i * i > n, do: true
+
   defp is_prime_helper(n, i) do
     if rem(n, i) == 0 do
       false
@@ -26,6 +28,7 @@ defmodule Lazy do
     |> Stream.take_while(&is_prime/1)
     |> Enum.count()
   end
+
   # 5. Ленивые коллекции (использование Stream)
   def quadratic_primes_lazy() do
     {a, b, count} =

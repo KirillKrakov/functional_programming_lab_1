@@ -1,5 +1,4 @@
 defmodule UsualRecursion do
-
   # Проверка, является ли число палиндромом
   defp is_palindrome(n) do
     str_n = Integer.to_string(n)
@@ -12,7 +11,10 @@ defmodule UsualRecursion do
   end
 
   defp largest_palindrome_usual_recur(i, _) when i < 100, do: 0
-  defp largest_palindrome_usual_recur(i, j) when j < 100, do: largest_palindrome_usual_recur(i - 1, 999)
+
+  defp largest_palindrome_usual_recur(i, j) when j < 100,
+    do: largest_palindrome_usual_recur(i - 1, 999)
+
   defp largest_palindrome_usual_recur(i, j) do
     product = i * j
     max_p = if is_palindrome(product), do: product, else: 0
