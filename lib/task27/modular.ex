@@ -65,13 +65,7 @@ defmodule Task27.Modular do
   defmodule MaxResultFinder do
     @moduledoc "Модуль для получения результата с наибольшим n"
     def find_max(results) do
-      # Аналог строки Enum.max_by(results, & &1.count)
-      Enum.reduce(results, nil, fn item, acc ->
-        case acc do
-          nil -> item
-          _ -> if item.count > acc.count, do: item, else: acc
-        end
-      end)
+      Enum.max_by(results, & &1.count)
     end
   end
 
