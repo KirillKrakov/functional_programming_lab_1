@@ -1,12 +1,12 @@
 defmodule Task4.TailRecursion do
+  @moduledoc "1.1 Хвостовая рекурсия"
   # Проверка, является ли число палиндромом
-  defp is_palindrome(n) do
+  defp palindrome?(n) do
     str_n = Integer.to_string(n)
     str_n == String.reverse(str_n)
   end
 
-  # 1.1 Хвостовая рекурсия
-  def largest_palindrome_tail_recur() do
+  def largest_palindrome_tail_recur do
     largest_palindrome_tail_recur(999, 999, 0)
   end
 
@@ -17,7 +17,7 @@ defmodule Task4.TailRecursion do
 
   defp largest_palindrome_tail_recur(i, j, max_p) do
     product = i * j
-    new_max_p = if is_palindrome(product), do: max(product, max_p), else: max_p
+    new_max_p = if palindrome?(product), do: max(product, max_p), else: max_p
     largest_palindrome_tail_recur(i, j - 1, new_max_p)
   end
 end

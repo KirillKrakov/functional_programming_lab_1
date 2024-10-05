@@ -36,7 +36,7 @@ defmodule Lab1Test do
   test "Task 27 Tail Recursion" do
     assert Task27.TailRecursion.quadratic_primes_tail_recur() == %{
              count: 71,
-             product: -59231,
+             product: -59_231,
              a: -61,
              b: 971
            }
@@ -45,7 +45,7 @@ defmodule Lab1Test do
   test "Task 27 Usual Recursion" do
     assert Task27.UsualRecursion.quadratic_primes_usual_recur() == %{
              count: 71,
-             product: -59231,
+             product: -59_231,
              a: -61,
              b: 971
            }
@@ -54,17 +54,17 @@ defmodule Lab1Test do
   test "Task 27 Modular" do
     assert Task27.Modular.quadratic_primes_modular() == %{
              count: 71,
-             product: -59231,
+             product: -59_231,
              a: -61,
              b: 971
            }
   end
 
   test "Task 27 Map27" do
-    assert Task27.Map27.quadratic_primes_map() == %{count: 71, product: -59231, a: -61, b: 971}
+    assert Task27.Map27.quadratic_primes_map() == %{count: 71, product: -59_231, a: -61, b: 971}
   end
 
   test "Task 27 Lazy" do
-    assert Task27.Lazy.quadratic_primes_lazy() == %{count: 71, product: -59231, a: -61, b: 971}
+    assert Task27.Lazy.quadratic_primes_lazy() == %{count: 71, product: -59_231, a: -61, b: 971}
   end
 end
