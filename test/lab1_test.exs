@@ -12,6 +12,7 @@ defmodule Lab1Test do
   doctest Task27.UsualRecursion
   doctest Task27.Modular
   doctest Task27.Map27
+  doctest Task27.Cycle
   doctest Task27.Lazy
 
   test "Task 4 Tail Recursion" do
@@ -67,6 +68,10 @@ defmodule Lab1Test do
 
   test "Task 27 Map27" do
     assert Task27.Map27.quadratic_primes_map() == %{count: 71, product: -59_231, a: -61, b: 971}
+  end
+
+  test "Task 27 Cycle" do
+    assert Task27.Cycle.quadratic_primes_cycle() == %{count: 71, product: -59_231, a: -61, b: 971}
   end
 
   test "Task 27 Lazy" do
